@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Search</title>
+  <link rel="stylesheet" href="styles.css">
+<style>
+    /* Adjust the image size */
+    img {
+      max-width: 70%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <form action="https://www.google.com/search">
+	<img src="logo.jpeg" alt="Google logo">
+    <input type="text" name="q">
+    <input type="submit" value="Google Search">
+    <input type="submit" value="I'm Feeling Lucky" onclick="feelingLucky()">
+  </form>
+  <a href="image-search.html">Image Search</a>
+  <a href="advanced-search.html">Advanced Search</a>
+
+  <script>
+    function feelingLucky() {
+      var input = document.querySelector('input[name="q"]');
+      var query = input.value;
+      var url = "https://www.google.com/search?btnI=1&q=" + encodeURIComponent(query);
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
